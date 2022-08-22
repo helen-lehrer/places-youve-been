@@ -12,14 +12,20 @@ locationDirectory()
 
 Describe: Locations(place)
 
-Test: It will have a place property
+Test: It will have a name property
 Code: 
 let locationDirectory = new LocationDirectory();
 let locations = new Locations("South Africa");
 Expected Output: 
-Locations(place)
- > place = {"South Africa"};
+Locations(name)
+ > name = {"South Africa"};
 
-Test:
-Code:
-Expected Output:
+Describe: AddLocation()
+
+Test: It will add a new Location object the locationDirectory
+Code: AddLocation(name);
+Expected Output: 
+locationDirectory()
+  >locations = {
+    South Africa: ("name", "year", "landmark", "notes")
+  }
