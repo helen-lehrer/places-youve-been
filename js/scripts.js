@@ -1,0 +1,3 @@
+function LocationDirectory() {
+  this.locations = {};
+}
