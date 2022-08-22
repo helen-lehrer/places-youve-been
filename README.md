@@ -33,7 +33,14 @@ locationDirectory()
 Describe: FindLocation()
 
 Test: It will find a location in the locationDirectory
-Code: FindLocation(name);
+Code: findLocation(name);
 Expected Output:
 locationDirectory(name)
 > name
+
+Describe deleteLocation()
+
+Test: It will delete a location in the locationDirectory
+Code: deleteLocation(name);
+Expected Output:
+> true
