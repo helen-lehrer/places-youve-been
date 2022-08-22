@@ -22,10 +22,18 @@ Locations(name)
 
 Describe: AddLocation()
 
-Test: It will add a new Location object the locationDirectory
+Test: It will add a new Location object to the locationDirectory
 Code: AddLocation(name);
 Expected Output: 
 locationDirectory()
-  >locations = {
+  > locations = {
     South Africa: ("name", "year", "landmark", "notes")
   }
+
+Describe: FindLocation()
+
+Test: It will find a location in the locationDirectory
+Code: FindLocation(name);
+Expected Output:
+locationDirectory(name)
+> name
