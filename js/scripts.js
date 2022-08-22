@@ -1,15 +1,12 @@
-// Business logic for locations
-
-function submitPlace () { 
-  // Business logic for directory
-  function LocationDirectory() {
-    this.locations = {};
-  }
-
-  LocationDirectory.prototype.addLocation = function(place) {
-  this.locations[place.name] = place;
-  }
+// Business logic for directory
+function LocationDirectory() {
+  this.locations = {};
 }
+
+LocationDirectory.prototype.addLocation = function(place) {
+this.locations[place.name] = place;
+}
+
 
 LocationDirectory.prototype.findLocation = function(name) {
   if (this.locations[name] !== undefined) {
@@ -34,22 +31,41 @@ function Place(name, year, landmark, notes) {
 }
 
 // UI Logic
-
+let locationDirectory = new LocationDirectory(); 
 
 function handleSubmission(event) {
   event.preventDefault();
-  submitPlace;
-
   // get input values
-  const nameInput = document.getElementById("nameOfPlace").value;
-  const yearInput = document.getElementById("year").value;
-  const landmarkInput = document.getElementById("landmark").value;
-  const notesInput = document.getElementById("notes").value;
+  const nameInput = document.getElementById("location-input").value;
+  const yearInput = document.getElementById("year-input").value;
+  const landmarkInput = document.getElementById("landmark-input").value;
+  const notesInput = document.getElementById("notes-input").value;
+
+  
+  let place = new Place(nameInput, yearInput, landmarkInput, notesInput);
+  locationDirectory.addLocation(place);
+  console.log(locationDirectory.locations[nameInput]);
+
+  document.getElementById("place-result").innerHTML = place.name;
+  document.getElementById("year-result").innerText = place.year;
+  document.getElementById("landmarks-result").innerText = place.landmark;
+  document.getElementById("notes-result").innerText = place.notes;
 
 }
 
-window.addEventListener ("load", function {
+function resetForm() {
+document.getElementById("inputPlace").reset();
+}
+
+function unhide() {
+  document.getElementById("results").removeAttribute("class");
+}
+
+window.addEventListener ("load", function() {
   let form = document.getElementById("inputPlace");
-  form.addEventListener("submit", submitPlace()); 
-})
+  form.addEventListener("submit", handleSubmission);
+  form.addEventListener("submit", resetForm);
+  form.addEventListener("submit", unhide);
+   
+});
 

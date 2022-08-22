@@ -1,29 +1,36 @@
 <DOCTYPE! html>
-<html lan="en-US">
+<html lang="en-US">
   <head>
     <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-   <form id="inputPlace">
-    <label> Enter A Place You've Visited:
-      <input type="text" name="place-input" id="nameOfPlace">
-    </label><br>
+    <h1>Places You've Visted</h1>
+    <form id="inputPlace">
+      <label for="location-input"> Enter A Place You've Visited: </label><br>
+      <input type="text" name="place-input" id="location-input"> <br>
 
-    <label> Enter the year you visited this place:
-      <input type="number" name="place-input" id="year">
-    </label><br>
+      <label for="year-input"> Enter the year you visited this place: </label><br>
+      <input type="number" name="place-input" id="year-input"> <br>
 
-    <label> What's a landmark of the place?:
-      <input type="text" name="place-input" id="landmark">
-    </label><br>
+      <label for="landmark-input"> What's a landmark of the place?: </label><br>
+      <input type="text" name="place-input" id="landmark-input"> <br>
 
-    <label> Notes about your visit:
-      <input type="text" name="place-input" id="notes">
-    </label><br>
+      <label for="notes-input"> Notes about your visit: </label><br>
+      <input type="text" name="place-input" id="notes-input"> <br>
 
-    <button type="submit">Submit</button>
-   </form> 
-  </body>
+      <button type="submit">Submit</button>
+    </form> 
+
+    <h2>Results</h2>
+    <div id="results" class="hidden">
+      <p>Place: <span id="place-result"></span></p>
+      <p>Year: <span id="year-result"></span></p>
+      <p>Landmarks: <span id="landmarks-result"></span></p>
+      <p>Notes: <span id="notes-result"></span></p>
+    </div>
+
+    </body>
 </html>
   
 
