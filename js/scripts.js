@@ -51,14 +51,11 @@ function handleSubmission(event) {
   document.getElementById("landmarks-result").innerText = place.landmark;
   document.getElementById("notes-result").innerText = place.notes;
 
+  document.getElementById("results").removeAttribute("class");
 }
 
 function resetForm() {
 document.getElementById("inputPlace").reset();
-}
-
-function unhide() {
-  document.getElementById("results").removeAttribute("class");
 }
 
 window.addEventListener ("load", function() {
